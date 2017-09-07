@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ItemSubject from '../components/ItemSubject'
 import Semester from '../components/Semester'
 import { course, datacheck } from '../data/course'
 
@@ -22,7 +21,6 @@ class Dashboard extends Component {
     selectSubject(subjectId) {
         const { courses } = this.state
         courses.map((semester) => semester.map((subject) => subject.status = false))
-        let obj = []
         const arrData = this.findChildSubject(subjectId)
         arrData.map((id) => courses.map((semester) => semester.map((subject) => {
                     if(subject.subject_id == id) {
