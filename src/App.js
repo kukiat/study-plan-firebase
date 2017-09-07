@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './page/Main'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        Study Plan
-      </div>
+        <Main />
     );
   }
 }
