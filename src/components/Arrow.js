@@ -1,5 +1,4 @@
 import React,{ Component } from 'react'
-import { datacheck } from '../data/course'
 
 class Arrow extends Component{
 

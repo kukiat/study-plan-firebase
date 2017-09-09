@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import Semester from '../components/Semester'
-import { course, datacheck } from '../data/course'
+import firebase from 'firebase'
 
 class Dashboard extends Component {
     constructor() {
         super()
         this.state = {
-            courses:[]
+            courses:[],
+            datacheck:[]
         }
         this.selectSubject = this.selectSubject.bind(this)
     }
 
-    componentWillMount() {
-        const _course = course.map((sementer) => sementer.map((data) => Object.assign({},data,{status:false})))
-        this.setState({
-            courses:_course
+    componentDidMount() {
+        const refDatacheck = firebase.database().ref('/datacheck')
+        const refCourse = firebase.database().ref('/course')
+        refCourse.on('value', (s) => {
+            this.setState({ courses: s.val() })
+        })
+        refDatacheck.on('value', (s) => {
+            this.setState({ datacheck: s.val() })
         })
     }
 
@@ -41,6 +46,7 @@ class Dashboard extends Component {
     }
 
     findChildSubject(subjectId) {
+        const { datacheck } = this.state
         let allObj = []
         allObj.push(subjectId)
         let arrayData = [subjectId]
@@ -62,6 +68,7 @@ class Dashboard extends Component {
         const ShowCourse = courses.map((data,index) => 
             <Semester key={index} semester={data} selectSubject={this.selectSubject}/>
         )
+        
         return (
             <div className="index_container z-depth-3 border-rad-4">
                 <div className="layout">

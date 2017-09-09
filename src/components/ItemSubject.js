@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Arrow from '../components/Arrow'
 import {ArrowTwo} from '../components/Arrow'
-import { datacheck } from '../data/course'
 
 class ItemSubject extends Component {
     
