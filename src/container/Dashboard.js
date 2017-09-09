@@ -13,6 +13,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
+        ssss
         const refDatacheck = firebase.database().ref('/datacheck')
         const refCourse = firebase.database().ref('/course')
         refCourse.on('value', (s) => {
