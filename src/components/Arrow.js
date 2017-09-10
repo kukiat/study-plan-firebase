@@ -1,6 +1,6 @@
 import React,{ Component } from 'react'
 
-class Arrow extends Component{
+class Arrow extends Component {
 
     render() {
         const { status} = this.props

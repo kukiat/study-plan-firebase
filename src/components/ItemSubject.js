@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Arrow from '../components/Arrow'
-import {ArrowTwo} from '../components/Arrow'
+import { ArrowTwo } from '../components/Arrow'
 
 class ItemSubject extends Component {
     
