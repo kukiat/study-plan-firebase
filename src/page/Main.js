@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import Header from './Header'
+import Header from '../components/Header'
 import Dashboard from '../container/Dashboard'
 
 class Main extends Component{

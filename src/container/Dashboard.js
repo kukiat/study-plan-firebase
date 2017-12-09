@@ -65,9 +65,7 @@ class Dashboard extends Component {
 
     render() {
         const { courses } = this.state
-        const ShowCourse = courses.map((data,index) => 
-            <Semester key={index} semester={data} selectSubject={this.selectSubject}/>
-        )
+        const ShowCourse = courses.map((data,index) => <Semester key={index} semester={data} selectSubject={this.selectSubject}/> )
         
         return (
             <div className="index_container z-depth-3 border-rad-4">

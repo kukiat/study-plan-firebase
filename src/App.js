@@ -4,8 +4,8 @@ import Main from './page/Main'
 class App extends Component {
   render() {
     return (
-        <div><Main /></div>
-    );
+        <Main />
+    )
   }
 }
 
